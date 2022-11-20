@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> Blank </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -17,6 +15,9 @@
     <strong>Ready to create an app?</strong>
     <ion-button (click)="create()">
       <ion-label>Create Parse Object</ion-label>
+    </ion-button>
+    <ion-button (click)="createWithIdempotency()">
+      <ion-label>Create With Idempotency</ion-label>
     </ion-button>
   </div>
 </ion-content>

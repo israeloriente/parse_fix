@@ -30,4 +30,31 @@ export class ParseService {
       console.error('Error while creating Todo: ', error);
     }
   }
+
+  async createObjectWithIdempotendy() {
+    const myNewObject = new Parse.Object('Todo');
+    const uid = new Date().toISOString();
+    this.setIdempotency(uid);
+    const result = await myNewObject.save();
+    console.log('Todo created', result);
+  }
+
+  /** Clean X-Parse-Request-Id to prevent problems, because if
+   * another request not contains REQUEST_HEADERS it will return
+   * duplicate request error.
+   */
+  public resetIdempotency() {
+    Parse.CoreManager.set('REQUEST_HEADERS', {
+      'X-Parse-Request-Id': '',
+    });
+  }
+
+  /**
+   * This function is used to set the X-Parse-Request-Id header to a
+   * user-provided value. This is used to avoid idempotency issues.
+   * @param value The value idempotency uid.
+   */
+  private setIdempotency(value: string) {
+    Parse.CoreManager.set('REQUEST_HEADERS', { 'X-Parse-Request-Id': value });
+  }
 }

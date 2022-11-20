@@ -12,4 +12,8 @@ export class HomePage {
   create() {
     this.parse.createObject();
   }
+
+  createWithIdempotency() {
+    this.parse.createObjectWithIdempotendy();
+  }
 }

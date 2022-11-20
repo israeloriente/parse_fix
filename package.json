@@ -7,9 +7,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "lint": "ng lint"
+    "proxy:1": "ionic s --no-open --proxy-config src/proxy.config.js --configuration proxy1",
+    "proxy:2": "ionic s --no-open --proxy-config src/proxy.config.json --configuration proxy2",
+    "clean": "rm -rf node_modules package-lock.json && npm install"
   },
   "private": true,
   "dependencies": {

@@ -1,0 +1,8 @@
+{
+  "/": {
+    "target": "https://parseapi.back4app.com",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
