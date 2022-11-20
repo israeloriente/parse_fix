@@ -22,3 +22,9 @@ Try with proxy js example
 ```bash
 npm run proxy:2
 ```
+
+
+
+
+https://user-images.githubusercontent.com/31784632/202915021-ab8f8981-531c-4619-9801-0f8f9219e3a6.mov
+
